@@ -34,20 +34,7 @@ function App() {
     <div className="bg-brand-dark text-white overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black" aria-label="Site">
-        <div style={{
-          padding: '0',
-          marginTop: '5px',
-          marginBottom: '5px',
-          boxSizing: 'border-box',
-          display: 'flex',
-          height: '100%',
-          width: '100%',
-          border: '0 solid #ccc',
-          borderRadius: '0',
-          paddingRight: '27%',
-          paddingLeft: '27%',
-          background: 'rgba(15, 15, 15, 0)'
-        }}>
+        <div className="nav-container">
           <ul className="list-none" style={{
             display: 'flex',
             direction: 'ltr',
