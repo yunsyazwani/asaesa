@@ -49,3 +49,29 @@ body {
   padding-right: 27%;
   background: transparent;
 }
+
+/* Video Showcase Menu List Hover */
+#comp-lrg5qf6l:hover {
+  z-index: 1;
+}
+
+#comp-lrg5qf6l .menu-list-item {
+  transition: all 0.4s ease-in-out 0s, visibility 0s;
+  transform-origin: 50% 50%;
+}
+
+#comp-lrg5qf6l:hover .menu-list-item {
+  transform: translateX(0) translateY(0) scaleX(1.1) scaleY(1.1) rotate(0deg) skewX(0deg) skewY(0deg);
+}
+
+/* View More Button Hover */
+#comp-lrg637ia button {
+  transition: all 0.2s ease, visibility 0s;
+}
+
+#comp-lrg637ia button:hover {
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: #DB1D60 !important;
+  font-weight: 700 !important;
+}

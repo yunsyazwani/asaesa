@@ -505,51 +505,154 @@ function App() {
       </section>
 
       {/* Video Showcase Section */}
-      <section className="relative py-20 bg-gradient-to-b from-black to-brand-dark overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            transform: `scale(${1 + (scrollY - 1600) * 0.0002})`,
-            transition: 'transform 0.1s ease-out',
-          }}
-        />
+      <section id="comp-lptv0k86" tabIndex={-1} style={{
+        left: 0,
+        marginLeft: 0,
+        width: '100%',
+        minWidth: 0,
+        position: 'relative',
+        backgroundColor: '#000000'
+      }}>
+        {/* Inline Content */}
+        <div data-mesh-id="comp-lptv0k86inlineContent" style={{ height: 'auto', width: '100%' }}>
+          <div data-mesh-id="comp-lptv0k86inlineContent-gridContainer" style={{
+            position: 'static',
+            display: 'grid',
+            height: 'auto',
+            width: '100%',
+            minHeight: 'auto',
+            gridTemplateRows: '1fr',
+            gridTemplateColumns: '100%'
+          }}>
+            {/* Container with 980px width */}
+            <div id="comp-jd8thjzn" style={{
+              position: 'relative',
+              margin: '0px 0px 0px calc((100% - 980px) * 0.5)',
+              left: '0px',
+              gridArea: '1 / 1 / 2 / 2',
+              justifySelf: 'start',
+              alignSelf: 'start',
+              width: '100%',
+              minWidth: '980px'
+            }}>
+              {/* Inner container */}
+              <div id="comp-lql00nz4" style={{ width: '980px' }}>
+                <div data-mesh-id="comp-lql00nz4inlineContent" style={{ height: 'auto', width: '100%' }}>
+                  <div data-mesh-id="comp-lql00nz4inlineContent-gridContainer" style={{
+                    position: 'static',
+                    display: 'grid',
+                    height: 'auto',
+                    width: '100%',
+                    minHeight: '837px',
+                    gridTemplateRows: 'min-content 1fr',
+                    gridTemplateColumns: '100%'
+                  }}>
+                    {/* Menu List */}
+                    <div id="comp-lrg5qf6l" style={{
+                      position: 'relative',
+                      margin: '205px 0px 26px calc((100% - 980px) * 0.5)',
+                      left: '28px',
+                      gridArea: '1 / 1 / 2 / 2',
+                      justifySelf: 'start',
+                      alignSelf: 'start',
+                      width: '303px',
+                      background: 'rgba(219, 29, 96, 0.5)',
+                      borderRadius: '10px',
+                      transition: 'all 0.4s ease-in-out 0s, visibility 0s'
+                    }}>
+                      <div data-mesh-id="comp-lrg5qf6linlineContent" style={{ height: 'auto', width: '303px' }}>
+                        <div data-mesh-id="comp-lrg5qf6linlineContent-gridContainer" style={{
+                          position: 'static',
+                          display: 'grid',
+                          height: 'auto',
+                          width: '100%',
+                          minHeight: 'auto',
+                          gridTemplateRows: 'repeat(8, min-content) 1fr',
+                          gridTemplateColumns: '100%'
+                        }}>
+                          {[
+                            'Short Films',
+                            'Corporate Advertising',
+                            'Music Videos',
+                            'Documentaries',
+                            'Online Videos',
+                            'Television',
+                            'Web Series',
+                            'Commercials',
+                            'Film Production'
+                          ].map((item, index) => (
+                            <div key={index} className="menu-list-item" style={{
+                              position: 'relative',
+                              margin: index === 0 ? '15px 0px 10px 0' : index === 8 ? '0px 0px 15px 0' : '0px 0px 11px 0',
+                              left: '26px',
+                              gridArea: `${index + 1} / 1 / ${index + 2} / 2`,
+                              justifySelf: 'start',
+                              alignSelf: 'start',
+                              width: '234px',
+                              height: 'auto'
+                            }}>
+                              <p style={{
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '16px',
+                                color: '#FFFFFF',
+                                margin: 0,
+                                lineHeight: '1.5em'
+                              }}>{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
 
-        <div className="relative z-10 container mx-auto px-6">
-          {/* Video Player Placeholder */}
-          <div className="max-w-4xl mx-auto aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              <span className="text-6xl">▶</span>
+                    {/* Video Player */}
+                    <div id="comp-lrfgcd8v" style={{
+                      position: 'relative',
+                      margin: '205px 0px 26px calc((100% - 980px) * 0.5)',
+                      left: '348px',
+                      gridArea: '1 / 1 / 2 / 2',
+                      justifySelf: 'start',
+                      alignSelf: 'start',
+                      width: '604px',
+                      height: '339px',
+                      boxShadow: '0px 1px 4px 0px rgba(0,0,0,0.6)',
+                      backgroundColor: 'rgba(0,0,0,0.25)'
+                    }}>
+                      <div className="w-full h-full flex items-center justify-center bg-gray-900">
+                        <span className="text-6xl text-gray-500">▶</span>
+                      </div>
+                    </div>
+
+                    {/* View More Button */}
+                    <div id="comp-lrg637ia" style={{
+                      position: 'relative',
+                      margin: '0px 0px 10px calc((100% - 980px) * 0.5)',
+                      left: '740px',
+                      gridArea: '2 / 1 / 3 / 2',
+                      justifySelf: 'start',
+                      alignSelf: 'start',
+                      width: '211px',
+                      height: '62px'
+                    }}>
+                      <button style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '50px',
+                        background: 'rgba(219, 29, 96, 0.5)',
+                        border: '2px solid transparent',
+                        color: '#FFFFFF',
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '16px',
+                        fontWeight: 500,
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease, visibility 0s'
+                      }}>
+                        View More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Video Info Panel */}
-          <div className="max-w-4xl mx-auto mt-8 bg-brand-magenta/20 backdrop-blur-sm rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-4">Video Projects</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-brand-pink rounded-full mr-3" />
-                Short Films
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-brand-pink rounded-full mr-3" />
-                Corporate Advertising
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-brand-pink rounded-full mr-3" />
-                Music Videos
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-brand-pink rounded-full mr-3" />
-                Documentaries
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-brand-pink rounded-full mr-3" />
-                Online Videos
-              </li>
-            </ul>
-            <button className="mt-6 bg-brand-pink hover:bg-brand-magenta text-white px-8 py-3 rounded-full transition-colors duration-300">
-              View Projects
-            </button>
           </div>
         </div>
       </section>
