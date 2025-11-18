@@ -87,15 +87,18 @@ function App() {
                     background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
                     boxSizing: 'border-box',
-                    transition: 'all 0.08s linear'
+                    transition: 'all 0.08s linear',
+                    color: activeSection === 'we-are' ? '#8B0000' : '#DB1D60'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-are') {
                       e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
+                      e.currentTarget.style.color = '#FFFFFF';
                     }
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
+                    e.currentTarget.style.color = activeSection === 'we-are' ? '#8B0000' : '#DB1D60';
                   }}
                   tabIndex={0}
                 >
@@ -107,16 +110,8 @@ function App() {
                       letterSpacing: '0.1em',
                       textTransform: 'none',
                       fontStyle: 'normal',
-                      color: activeSection === 'we-are' ? '#8B0000' : '#DB1D60',
                       transition: 'inherit',
                       whiteSpace: 'nowrap'
-                    }} onMouseEnter={(e) => {
-                      if (activeSection !== 'we-are') {
-                        e.currentTarget.style.color = '#FFFFFF';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = activeSection === 'we-are' ? '#8B0000' : '#DB1D60';
                     }}>WE ARE</span>
                   </div>
                 </a>
@@ -148,15 +143,18 @@ function App() {
                     background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
                     boxSizing: 'border-box',
-                    transition: 'all 0.08s linear'
+                    transition: 'all 0.08s linear',
+                    color: activeSection === 'we-do' ? '#8B0000' : '#DB1D60'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-do') {
                       e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
+                      e.currentTarget.style.color = '#FFFFFF';
                     }
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
+                    e.currentTarget.style.color = activeSection === 'we-do' ? '#8B0000' : '#DB1D60';
                   }}
                   tabIndex={0}
                 >
@@ -168,16 +166,8 @@ function App() {
                       letterSpacing: '0.1em',
                       textTransform: 'none',
                       fontStyle: 'normal',
-                      color: activeSection === 'we-do' ? '#8B0000' : '#DB1D60',
                       transition: 'inherit',
                       whiteSpace: 'nowrap'
-                    }} onMouseEnter={(e) => {
-                      if (activeSection !== 'we-do') {
-                        e.currentTarget.style.color = '#FFFFFF';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = activeSection === 'we-do' ? '#8B0000' : '#DB1D60';
                     }}>WE DO</span>
                   </div>
                 </a>
@@ -209,15 +199,18 @@ function App() {
                     background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
                     boxSizing: 'border-box',
-                    transition: 'all 0.08s linear'
+                    transition: 'all 0.08s linear',
+                    color: activeSection === 'we-hear' ? '#8B0000' : '#DB1D60'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-hear') {
                       e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
+                      e.currentTarget.style.color = '#FFFFFF';
                     }
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
+                    e.currentTarget.style.color = activeSection === 'we-hear' ? '#8B0000' : '#DB1D60';
                   }}
                   tabIndex={0}
                 >
@@ -229,16 +222,8 @@ function App() {
                       letterSpacing: '0.1em',
                       textTransform: 'none',
                       fontStyle: 'normal',
-                      color: activeSection === 'we-hear' ? '#8B0000' : '#DB1D60',
                       transition: 'inherit',
                       whiteSpace: 'nowrap'
-                    }} onMouseEnter={(e) => {
-                      if (activeSection !== 'we-hear') {
-                        e.currentTarget.style.color = '#FFFFFF';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = activeSection === 'we-hear' ? '#8B0000' : '#DB1D60';
                     }}>WE HEAR</span>
                   </div>
                 </a>
