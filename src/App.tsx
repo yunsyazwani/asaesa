@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [scrollY, setScrollY] = useState(0)
   const [activeSection, setActiveSection] = useState('we-are')
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -234,80 +235,284 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="we-are" className="relative min-h-screen overflow-hidden">
-        {/* Animated Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/src/assets/1.avif')`,
-            transform: `scale(${1 + scrollY * 0.0003})`,
-            transition: 'transform 0.1s ease-out',
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 pt-16">
-          <h1 className="mb-8">
-            <span style={{ fontFamily: 'Montserrat, sans-serif', color: '#111113', fontWeight: 'bold', fontSize: '40px', letterSpacing: '0.4em' }}>ASA ESA</span>
-            <br />
-            <span className="text-white font-bold" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '120px' }}>FILMS</span>
-          </h1>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
+      <section id="we-are" tabIndex={-1} className="relative" style={{
+        overflow: 'visible',
+        left: 0,
+        marginLeft: 0,
+        width: '100%',
+        minWidth: 0,
+        position: 'relative',
+        justifySelf: 'start',
+        alignSelf: 'start'
+      }}>
+        {/* Background Layers */}
+        <div data-hook="bgLayers" style={{ position: 'absolute', width: '100%', height: '100%', inset: 0 }}>
+          <div data-testid="colorUnderlay" style={{ position: 'absolute', inset: 0 }}></div>
+          <div id="bgMedia_we-are" style={{ position: 'absolute', inset: 0 }}>
+            <div
+              className="bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('/src/assets/bg-pink.avif')`,
+                width: '100%',
+                height: '100%',
+                position: 'absolute',
+                inset: 0
+              }}
+            />
           </div>
         </div>
-      </section>
 
-      {/* Services Tags */}
-      <section className="py-8 bg-black">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-center space-x-8 text-sm text-gray-400">
-            <span>Film & Television</span>
-            <span>Video Production</span>
-            <span>Online Content</span>
-          </div>
-        </div>
-      </section>
+        {/* Inline Content */}
+        <div data-mesh-id="we-are-inlineContent" style={{ height: 'auto', width: '100%', position: 'relative', zIndex: 1 }}>
+          <div data-mesh-id="we-are-gridContainer" style={{
+            position: 'static',
+            display: 'grid',
+            height: 'auto',
+            width: '100%',
+            minHeight: '1236px',
+            gridTemplateRows: 'repeat(3, min-content) 1fr',
+            gridTemplateColumns: '100%'
+          }}>
+            {/* ASA ESA text */}
+            <div style={{
+              position: 'relative',
+              margin: '130px 0px -16px calc((100% - 980px) * 0.5)',
+              left: '307px',
+              gridArea: '1 / 1 / 2 / 2',
+              justifySelf: 'start',
+              alignSelf: 'start',
+              width: '364px',
+              height: 'auto'
+            }}>
+              <h1 style={{
+                fontFamily: 'Montserrat, sans-serif',
+                color: '#111113',
+                fontWeight: 'bold',
+                fontSize: '40px',
+                letterSpacing: '0.4em',
+                lineHeight: '1.2em',
+                textAlign: 'center',
+                margin: 0
+              }}>ASA ESA</h1>
+            </div>
 
-      {/* WE MAKE FILMS Section */}
-      <section id="we-do" className="relative py-20 bg-black overflow-hidden">
-        <div
-          className="absolute inset-0 bg-black"
-          style={{
-            transform: `scale(${1 + (scrollY - 800) * 0.0002})`,
-            transition: 'transform 0.1s ease-out',
-          }}
-        />
+            {/* FILMS text */}
+            <div style={{
+              position: 'relative',
+              margin: '0px 0px 10px calc((100% - 980px) * 0.5)',
+              left: '232px',
+              gridArea: '2 / 1 / 3 / 2',
+              justifySelf: 'start',
+              alignSelf: 'start',
+              width: '516px',
+              height: 'auto'
+            }}>
+              <h1 style={{
+                fontFamily: 'Montserrat, sans-serif',
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+                fontSize: '120px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                margin: 0
+              }}>FILMS</h1>
+            </div>
 
-        <div className="relative z-10 container mx-auto px-6">
-          <h2 className="text-5xl md:text-7xl font-bold text-center mb-4">
-            WE MAKE
-            <br />
-            <span className="text-brand-pink">FILMS</span>
-          </h2>
-
-          {/* Clapperboard Icon Placeholder */}
-          <div className="flex justify-center mb-12">
-            <div className="w-24 h-24 border-2 border-brand-pink rounded-lg flex items-center justify-center">
-              <span className="text-brand-pink text-4xl">🎬</span>
+            {/* Services Tags */}
+            <div style={{
+              position: 'relative',
+              gridArea: '4 / 1 / 5 / 2',
+              justifySelf: 'center',
+              alignSelf: 'end',
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2rem',
+              width: '100%',
+              paddingBottom: '50px'
+            }}>
+              <span style={{
+                fontSize: '30px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>Film & Television</span>
+              <span style={{
+                fontSize: '30px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>Video Production</span>
+              <span style={{
+                fontSize: '30px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                fontFamily: 'Montserrat, sans-serif'
+              }}>Online Content</span>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Image Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+      {/* Divider Line */}
+      <div style={{
+        width: '100%',
+        height: '1px',
+        backgroundColor: '#FFFFFF',
+        opacity: 0.3,
+        margin: '0'
+      }}></div>
+
+      {/* WE MAKE FILMS Section */}
+      <section id="we-do" tabIndex={-1} className="relative" style={{
+        width: '100%',
+        position: 'relative',
+        backgroundColor: '#000000'
+      }}>
+        {/* Inline Content */}
+        <div data-mesh-id="we-do-inlineContent" style={{ height: 'auto', width: '100%' }}>
+          <div data-mesh-id="we-do-gridContainer" style={{
+            position: 'static',
+            display: 'grid',
+            height: 'auto',
+            width: '100%',
+            minHeight: '836px',
+            gridTemplateRows: 'repeat(2, min-content) 1fr',
+            gridTemplateColumns: '100%'
+          }}>
+            {/* WE MAKE text */}
+            <div style={{
+              position: 'relative',
+              margin: '212px auto 48px auto',
+              gridArea: '1 / 1 / 2 / 2',
+              justifySelf: 'center',
+              alignSelf: 'start',
+              width: '833px',
+              height: 'auto',
+              zIndex: 1
+            }}>
+              <h2 style={{
+                fontFamily: 'Montserrat, sans-serif',
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+                fontSize: '150px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                margin: 0
+              }}>WE MAKE</h2>
+            </div>
+
+            {/* Clapperboard Image */}
+            <div style={{
+              position: 'relative',
+              margin: '266px auto 10px auto',
+              gridArea: '1 / 1 / 4 / 2',
+              justifySelf: 'center',
+              alignSelf: 'start',
+              width: '422px',
+              height: '381px',
+              zIndex: 2,
+              transform: 'translateX(240px)'
+            }}>
+              <img
+                src="/src/assets/WEDO.avif"
+                alt="Film Clapperboard"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+
+            {/* FILMS text */}
+            <div style={{
+              position: 'relative',
+              margin: '0px auto 10px auto',
+              gridArea: '2 / 1 / 3 / 2',
+              justifySelf: 'center',
+              alignSelf: 'start',
+              width: '516px',
+              height: 'auto',
+              zIndex: 3
+            }}>
+              <h2 style={{
+                fontFamily: 'Montserrat, sans-serif',
+                color: '#DB1D60',
+                fontWeight: 'bold',
+                fontSize: '150px',
+                lineHeight: '1em',
+                textAlign: 'center',
+                margin: 0
+              }}>FILMS</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section className="relative py-20 bg-black overflow-hidden">
+        <div className="relative z-10 container mx-auto px-6">
+
+          {/* Image Gallery Slider */}
+          <div className="relative mt-16 px-12">
+            {/* Left Arrow */}
+            <button
+              onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
+              disabled={currentSlide === 0}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-transparent hover:bg-opacity-20 hover:bg-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              style={{ color: '#DB1D60' }}
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            {/* Gallery Container */}
+            <div className="overflow-hidden">
               <div
-                key={item}
-                className="aspect-video bg-gray-800 rounded overflow-hidden hover:scale-105 transition-transform duration-300"
+                className="flex transition-transform duration-500 ease-in-out gap-4"
+                style={{
+                  transform: `translateX(-${currentSlide * (100 / 4 + 1)}%)`
+                }}
               >
-                {/* Placeholder for gallery images */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900" />
+                {[
+                  'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800',
+                  'https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=800',
+                  'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800',
+                  'https://images.unsplash.com/photo-1579721840641-7d0e67f1204e?w=800',
+                  'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800',
+                  'https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800'
+                ].map((img, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 aspect-video bg-gray-800 rounded overflow-hidden"
+                    style={{ width: 'calc(25% - 12px)' }}
+                  >
+                    <img
+                      src={img}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.classList.add('bg-gradient-to-br', 'from-gray-700', 'to-gray-900');
+                      }}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => setCurrentSlide(Math.min(2, currentSlide + 1))}
+              disabled={currentSlide === 2}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-transparent hover:bg-opacity-20 hover:bg-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              style={{ color: '#DB1D60' }}
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
