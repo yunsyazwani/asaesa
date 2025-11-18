@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -33,46 +33,91 @@ function App() {
     <div className="bg-brand-dark text-white overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black" aria-label="Site">
-        <div className="p-2">
-          <ul className="flex justify-center gap-16 list-none" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '16px', fontWeight: 400, letterSpacing: '0.1em' }}>
+        <div style={{
+          padding: '0',
+          marginTop: '5px',
+          marginBottom: '5px',
+          boxSizing: 'border-box',
+          display: 'flex',
+          height: '100%',
+          width: '100%',
+          border: '0 solid #ccc',
+          borderRadius: '0',
+          paddingRight: '27%',
+          paddingLeft: '27%',
+          background: 'rgba(15, 15, 15, 0)'
+        }}>
+          <ul className="list-none" style={{
+            display: 'flex',
+            direction: 'ltr',
+            width: 'calc(100% + 8px)',
+            marginLeft: '-4px',
+            marginRight: '-4px',
+            flexGrow: 1,
+            justifyContent: 'center',
+            height: 'calc(100% + 8px)',
+            marginTop: '-4px',
+            marginBottom: '-4px',
+            flexWrap: 'wrap',
+            minWidth: 'fit-content'
+          }}>
             <li
               className="menu-item-wrapper"
               data-testid="menuItemDepth0"
               data-item-depth="0"
               data-is-current={activeSection === 'we-are'}
               aria-current={activeSection === 'we-are'}
+              style={{ flexGrow: 'inherit' }}
             >
-              <div className="menu-item-root-container">
+              <div className="menu-item-root-container" style={{ height: '100%' }}>
                 <a
                   data-item-label="true"
                   data-testid="linkElement"
                   href="#we-are"
                   target="_self"
-                  className={`menu-item-link block cursor-pointer transition-all duration-300 ${activeSection === 'we-are' ? 'is-current-page' : ''}`}
+                  className={`menu-item-link block cursor-pointer ${activeSection === 'we-are' ? 'is-current-page' : ''}`}
                   style={{
-                    padding: '8px 10px',
-                    margin: '0',
+                    padding: '10px',
+                    marginLeft: '4px',
+                    marginRight: '4px',
+                    marginTop: '4px',
+                    marginBottom: '4px',
                     border: '0',
                     borderRadius: '0',
-                    background: 'transparent',
+                    background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
-                    color: activeSection === 'we-are' ? '#8B0000' : '#DB1D60',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    transition: 'all 0.08s linear'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-are') {
-                      e.currentTarget.style.backgroundColor = '#DB1D60';
-                      e.currentTarget.style.color = '#FFFFFF';
+                      e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
                     }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = activeSection === 'we-are' ? '#8B0000' : '#DB1D60';
+                    e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
                   }}
                   tabIndex={0}
                 >
-                  <div className="menu-item-container">
-                    <span className="menu-item-label">WE ARE</span>
+                  <div className="menu-item-container" style={{ justifyContent: 'center', display: 'flex', height: '100%', alignItems: 'center' }}>
+                    <span className="menu-item-label" style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      letterSpacing: '0.1em',
+                      textTransform: 'none',
+                      fontStyle: 'normal',
+                      color: activeSection === 'we-are' ? '#8B0000' : '#DB1D60',
+                      transition: 'inherit',
+                      whiteSpace: 'nowrap'
+                    }} onMouseEnter={(e) => {
+                      if (activeSection !== 'we-are') {
+                        e.currentTarget.style.color = '#FFFFFF';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = activeSection === 'we-are' ? '#8B0000' : '#DB1D60';
+                    }}>WE ARE</span>
                   </div>
                 </a>
               </div>
@@ -83,38 +128,57 @@ function App() {
               data-item-depth="0"
               data-is-current={activeSection === 'we-do'}
               aria-current={activeSection === 'we-do'}
+              style={{ flexGrow: 'inherit' }}
             >
-              <div className="menu-item-root-container">
+              <div className="menu-item-root-container" style={{ height: '100%' }}>
                 <a
                   data-item-label="true"
                   data-testid="linkElement"
                   href="#we-do"
                   target="_self"
-                  className={`menu-item-link block cursor-pointer transition-all duration-300 ${activeSection === 'we-do' ? 'is-current-page' : ''}`}
+                  className={`menu-item-link block cursor-pointer ${activeSection === 'we-do' ? 'is-current-page' : ''}`}
                   style={{
-                    padding: '8px 10px',
-                    margin: '0',
+                    padding: '10px',
+                    marginLeft: '4px',
+                    marginRight: '4px',
+                    marginTop: '4px',
+                    marginBottom: '4px',
                     border: '0',
                     borderRadius: '0',
-                    background: 'transparent',
+                    background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
-                    color: activeSection === 'we-do' ? '#8B0000' : '#DB1D60',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    transition: 'all 0.08s linear'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-do') {
-                      e.currentTarget.style.backgroundColor = '#DB1D60';
-                      e.currentTarget.style.color = '#FFFFFF';
+                      e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
                     }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = activeSection === 'we-do' ? '#8B0000' : '#DB1D60';
+                    e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
                   }}
                   tabIndex={0}
                 >
-                  <div className="menu-item-container">
-                    <span className="menu-item-label">WE DO</span>
+                  <div className="menu-item-container" style={{ justifyContent: 'center', display: 'flex', height: '100%', alignItems: 'center' }}>
+                    <span className="menu-item-label" style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      letterSpacing: '0.1em',
+                      textTransform: 'none',
+                      fontStyle: 'normal',
+                      color: activeSection === 'we-do' ? '#8B0000' : '#DB1D60',
+                      transition: 'inherit',
+                      whiteSpace: 'nowrap'
+                    }} onMouseEnter={(e) => {
+                      if (activeSection !== 'we-do') {
+                        e.currentTarget.style.color = '#FFFFFF';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = activeSection === 'we-do' ? '#8B0000' : '#DB1D60';
+                    }}>WE DO</span>
                   </div>
                 </a>
               </div>
@@ -125,38 +189,57 @@ function App() {
               data-item-depth="0"
               data-is-current={activeSection === 'we-hear'}
               aria-current={activeSection === 'we-hear'}
+              style={{ flexGrow: 'inherit' }}
             >
-              <div className="menu-item-root-container">
+              <div className="menu-item-root-container" style={{ height: '100%' }}>
                 <a
                   data-item-label="true"
                   data-testid="linkElement"
                   href="#we-hear"
                   target="_self"
-                  className={`menu-item-link block cursor-pointer transition-all duration-300 ${activeSection === 'we-hear' ? 'is-current-page' : ''}`}
+                  className={`menu-item-link block cursor-pointer ${activeSection === 'we-hear' ? 'is-current-page' : ''}`}
                   style={{
-                    padding: '8px 10px',
-                    margin: '0',
+                    padding: '10px',
+                    marginLeft: '4px',
+                    marginRight: '4px',
+                    marginTop: '4px',
+                    marginBottom: '4px',
                     border: '0',
                     borderRadius: '0',
-                    background: 'transparent',
+                    background: 'rgba(247, 247, 247, 0)',
                     textDecoration: 'none',
-                    color: activeSection === 'we-hear' ? '#8B0000' : '#DB1D60',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    transition: 'all 0.08s linear'
                   }}
                   onMouseEnter={(e) => {
                     if (activeSection !== 'we-hear') {
-                      e.currentTarget.style.backgroundColor = '#DB1D60';
-                      e.currentTarget.style.color = '#FFFFFF';
+                      e.currentTarget.style.background = 'rgba(219, 29, 96, 0.52)';
                     }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = activeSection === 'we-hear' ? '#8B0000' : '#DB1D60';
+                    e.currentTarget.style.background = 'rgba(247, 247, 247, 0)';
                   }}
                   tabIndex={0}
                 >
-                  <div className="menu-item-container">
-                    <span className="menu-item-label">WE HEAR</span>
+                  <div className="menu-item-container" style={{ justifyContent: 'center', display: 'flex', height: '100%', alignItems: 'center' }}>
+                    <span className="menu-item-label" style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: 400,
+                      letterSpacing: '0.1em',
+                      textTransform: 'none',
+                      fontStyle: 'normal',
+                      color: activeSection === 'we-hear' ? '#8B0000' : '#DB1D60',
+                      transition: 'inherit',
+                      whiteSpace: 'nowrap'
+                    }} onMouseEnter={(e) => {
+                      if (activeSection !== 'we-hear') {
+                        e.currentTarget.style.color = '#FFFFFF';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = activeSection === 'we-hear' ? '#8B0000' : '#DB1D60';
+                    }}>WE HEAR</span>
                   </div>
                 </a>
               </div>
